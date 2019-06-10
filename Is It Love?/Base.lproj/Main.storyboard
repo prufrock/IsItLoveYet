@@ -10,49 +10,94 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Is It Love View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Is_It_Love_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IsItLoveViewController" customModule="Is_It_Love_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8S-dv-Pd0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8S-dv-Pd0">
                                 <rect key="frame" x="115" y="149" width="145" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="love-value-label"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Dn-jD-TT3">
-                                <rect key="frame" x="100" y="592" width="174" height="106"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Dn-jD-TT3">
+                                <rect key="frame" x="100.66666666666669" y="592" width="174" height="106"/>
+                                <accessibility key="accessibilityConfiguration" identifier="love-button"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="5CV-xH-NgR"/>
+                                    <constraint firstAttribute="height" constant="106" id="zqG-hk-pfT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="80"/>
                                 <state key="normal" title="Love">
+                                    <color key="titleColor" red="1" green="0.18325774689999999" blue="0.28820242190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="disabled">
                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="htG-q9-I7q"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGx-Su-RN9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGx-Su-RN9">
                                 <rect key="frame" x="48" y="486" width="60" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="left-button"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="42"/>
                                 <state key="normal" title="Joy">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="leftButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YhY-zS-fnd"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdG-yI-dzh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdG-yI-dzh">
                                 <rect key="frame" x="260" y="486" width="80" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="right-button"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="42"/>
                                 <state key="normal" title="Envy">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="rightButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WWx-UT-LmL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meR-C5-Lwb">
+                                <rect key="frame" x="154" y="299" width="67" height="47"/>
+                                <accessibility key="accessibilityConfiguration" identifier="reset-button"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
+                                <state key="normal" title="reset">
+                                    <color key="titleColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CLO-ao-bxS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Dn-jD-TT3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2EW-5b-hQe"/>
+                            <constraint firstItem="LdG-yI-dzh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="442" id="2b3-yK-QY2"/>
+                            <constraint firstItem="meR-C5-Lwb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7Xc-pR-9Je"/>
+                            <constraint firstItem="a8S-dv-Pd0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="105" id="K2j-VX-Zvf"/>
+                            <constraint firstItem="a8S-dv-Pd0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QWA-pG-KBo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LdG-yI-dzh" secondAttribute="trailing" constant="35" id="SFb-Nm-w54"/>
+                            <constraint firstItem="0Dn-jD-TT3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="548" id="Shl-5m-z0o"/>
+                            <constraint firstItem="yGx-Su-RN9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="442" id="qFJ-ue-USV"/>
+                            <constraint firstItem="meR-C5-Lwb" firstAttribute="top" secondItem="a8S-dv-Pd0" secondAttribute="bottom" constant="30" id="vWr-JU-afS"/>
+                            <constraint firstItem="yGx-Su-RN9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="wkZ-la-KmF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="leftButton" destination="yGx-Su-RN9" id="Dd8-uZ-6O2"/>
+                        <outlet property="loveButton" destination="0Dn-jD-TT3" id="R9q-wK-rTj"/>
+                        <outlet property="loveProgressLabel" destination="a8S-dv-Pd0" id="Wu1-ND-SHC"/>
+                        <outlet property="rightButton" destination="LdG-yI-dzh" id="DXm-uW-ADm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

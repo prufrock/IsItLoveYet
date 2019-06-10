@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		40C14A6822AB57CC002A701B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C14A6722AB57CC002A701B /* AppDelegate.swift */; };
-		40C14A6A22AB57CC002A701B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C14A6922AB57CC002A701B /* ViewController.swift */; };
 		40C14A6D22AB57CC002A701B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C14A6B22AB57CC002A701B /* Main.storyboard */; };
 		40C14A6F22AB57CD002A701B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C14A6E22AB57CD002A701B /* Assets.xcassets */; };
 		40C14A7222AB57CD002A701B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C14A7022AB57CD002A701B /* LaunchScreen.storyboard */; };
 		40C14A7D22AB57CD002A701B /* Is_It_Love_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C14A7C22AB57CD002A701B /* Is_It_Love_Tests.swift */; };
 		40C14A8822AB57CD002A701B /* Is_It_Love_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C14A8722AB57CD002A701B /* Is_It_Love_UITests.swift */; };
+		40C14A9622ABD57D002A701B /* IsItLoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C14A9522ABD57D002A701B /* IsItLoveViewController.swift */; };
+		40C14A9822ADEF37002A701B /* LoveProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C14A9722ADEF37002A701B /* LoveProgress.swift */; };
+		40C14A9A22ADF017002A701B /* LoveProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C14A9922ADF017002A701B /* LoveProgressTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		40C14A6422AB57CC002A701B /* Is It Love?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Is It Love?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C14A6722AB57CC002A701B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		40C14A6922AB57CC002A701B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40C14A6C22AB57CC002A701B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40C14A6E22AB57CD002A701B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40C14A7122AB57CD002A701B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		40C14A8322AB57CD002A701B /* Is It Love?UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Is It Love?UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C14A8722AB57CD002A701B /* Is_It_Love_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Is_It_Love_UITests.swift; sourceTree = "<group>"; };
 		40C14A8922AB57CD002A701B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40C14A9522ABD57D002A701B /* IsItLoveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsItLoveViewController.swift; sourceTree = "<group>"; };
+		40C14A9722ADEF37002A701B /* LoveProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveProgress.swift; sourceTree = "<group>"; };
+		40C14A9922ADF017002A701B /* LoveProgressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveProgressTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +102,12 @@
 			isa = PBXGroup;
 			children = (
 				40C14A6722AB57CC002A701B /* AppDelegate.swift */,
-				40C14A6922AB57CC002A701B /* ViewController.swift */,
 				40C14A6B22AB57CC002A701B /* Main.storyboard */,
 				40C14A6E22AB57CD002A701B /* Assets.xcassets */,
 				40C14A7022AB57CD002A701B /* LaunchScreen.storyboard */,
 				40C14A7322AB57CD002A701B /* Info.plist */,
+				40C14A9522ABD57D002A701B /* IsItLoveViewController.swift */,
+				40C14A9722ADEF37002A701B /* LoveProgress.swift */,
 			);
 			path = "Is It Love?";
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 			children = (
 				40C14A7C22AB57CD002A701B /* Is_It_Love_Tests.swift */,
 				40C14A7E22AB57CD002A701B /* Info.plist */,
+				40C14A9922ADF017002A701B /* LoveProgressTests.swift */,
 			);
 			path = "Is It Love?Tests";
 			sourceTree = "<group>";
@@ -256,8 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40C14A6A22AB57CC002A701B /* ViewController.swift in Sources */,
+				40C14A9822ADEF37002A701B /* LoveProgress.swift in Sources */,
 				40C14A6822AB57CC002A701B /* AppDelegate.swift in Sources */,
+				40C14A9622ABD57D002A701B /* IsItLoveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C14A9A22ADF017002A701B /* LoveProgressTests.swift in Sources */,
 				40C14A7D22AB57CD002A701B /* Is_It_Love_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

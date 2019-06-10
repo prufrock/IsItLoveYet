@@ -26,9 +26,44 @@ class Is_It_Love_UITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testWhenTheApplicationLaunches() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let app = XCUIApplication()
+
+        let leftButton = app.buttons["left-button"]
+        let rightButton = app.buttons["right-button"]
+        let resetButton = app.buttons["reset-button"]
+        let loveButton = app.buttons["love-button"]
+        
+        XCTAssertTrue(leftButton.exists, "the left button should exist")
+        XCTAssertTrue(rightButton.exists, "the right button should exist")
+        XCTAssertTrue(resetButton.exists, "the reset button should exist")
+        XCTAssertTrue(loveButton.exists, "the love button should exist")
+
+        XCTAssertEqual(app.staticTexts["0.0"].exists, true, "love value starts at 0.0")
+        
+        // When left button is tapped
+        leftButton.tap()
+        XCTAssertEqual(app.staticTexts["10.0"].exists, true, "love value increases by 10.0 to 10.0")
+
+        // When the right button is tapped
+        rightButton.tap()
+        XCTAssertEqual(app.staticTexts["0.0"].exists, true, "love value decreases by 10.0 to 0.0")
+        
+        // When the left button is tapped 10 times
+        for _ in 1...10 {
+            leftButton.tap()
+        }
+        XCTAssertEqual(app.staticTexts["100.0"].exists, true, "love value increases by 10.0 to 100.0")
+        
+        // When the love button is tapped
+        loveButton.tap()
+        XCTAssertEqual(app.staticTexts["❤️"].exists, true, "love value changes to ❤️")
+        
+        // When the reset button is tapped
+        resetButton.tap()
+        XCTAssertEqual(app.staticTexts["0.0"].exists, true, "love value changes to 0.0")
     }
 
 }
