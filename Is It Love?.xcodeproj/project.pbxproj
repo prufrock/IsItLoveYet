@@ -16,6 +16,7 @@
 		40C14A9622ABD57D002A701B /* IsItLoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C14A9522ABD57D002A701B /* IsItLoveViewController.swift */; };
 		40C14A9822ADEF37002A701B /* LoveProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C14A9722ADEF37002A701B /* LoveProgress.swift */; };
 		40C14A9A22ADF017002A701B /* LoveProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C14A9922ADF017002A701B /* LoveProgressTests.swift */; };
+		40D31A8922AF476C00F78151 /* IsItLoveYet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D31A8822AF476C00F78151 /* IsItLoveYet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		40C14A9522ABD57D002A701B /* IsItLoveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsItLoveViewController.swift; sourceTree = "<group>"; };
 		40C14A9722ADEF37002A701B /* LoveProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveProgress.swift; sourceTree = "<group>"; };
 		40C14A9922ADF017002A701B /* LoveProgressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveProgressTests.swift; sourceTree = "<group>"; };
+		40D31A8822AF476C00F78151 /* IsItLoveYet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsItLoveYet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				40C14A7322AB57CD002A701B /* Info.plist */,
 				40C14A9522ABD57D002A701B /* IsItLoveViewController.swift */,
 				40C14A9722ADEF37002A701B /* LoveProgress.swift */,
+				40D31A8822AF476C00F78151 /* IsItLoveYet.swift */,
 			);
 			path = "Is It Love?";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40C14A9822ADEF37002A701B /* LoveProgress.swift in Sources */,
+				40D31A8922AF476C00F78151 /* IsItLoveYet.swift in Sources */,
 				40C14A6822AB57CC002A701B /* AppDelegate.swift in Sources */,
 				40C14A9622ABD57D002A701B /* IsItLoveViewController.swift in Sources */,
 			);

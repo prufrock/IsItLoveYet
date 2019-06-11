@@ -21,9 +21,7 @@ class IsItLoveViewController: UIViewController {
     private var positiveWords = [String]()
     private var negativeWords = [String]()
     
-    private let step = 10.0
-    private let floor = 0.0
-    private let ceiling = 100.0
+    private var isItLoveYet: IsItLoveYet!
     
     private var loveProgressText: String = "0.0" {
         didSet {
@@ -34,6 +32,8 @@ class IsItLoveViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        isItLoveYet = IsItLoveYet()
         
         enableLoveButton(false)
 
@@ -46,20 +46,13 @@ class IsItLoveViewController: UIViewController {
     
     @IBAction func leftButtonPressed(_ button: UIButton) {
         
-        // Convert value to domain
-        guard let loveProgressNumber = Double(loveProgressText) else {
-            return
-        }
-        
         // Perform domain operation
-        let progress = LoveProgress(initialProgress: loveProgressNumber)
-        progress.increment()
-        
+        isItLoveYet.incrementProgress()
         
         // Change UI in response to domain changes
-        loveProgressText = String(progress.value)
+        loveProgressText = String(isItLoveYet.currentProgress())
         setTitlesFor(leftButton, title: positiveWord())
-        if progress.hasReachedLoveLimit() {
+        if isItLoveYet.hasReachedLoveLimit() {
             enableLoveButton(true)
             return
         } else {
@@ -70,19 +63,13 @@ class IsItLoveViewController: UIViewController {
     
     @IBAction func rightButtonPressed(_ button: UIButton) {
         
-        // Convert value to domain
-        guard let loveProgressNumber = Double(loveProgressText) else {
-            return
-        }
-        
-        //Perform domain operation
-        let progress = LoveProgress(initialProgress: loveProgressNumber)
-        progress.decrement()
+        // Perform domain operation
+        isItLoveYet.decrementProgress()
         
         // Change UI in response to domain changes
-        loveProgressText = String(progress.value)
-        setTitlesFor(rightButton, title: negativeWord())
-        if progress.hasReachedLoveLimit() {
+        loveProgressText = String(isItLoveYet.currentProgress())
+        setTitlesFor(leftButton, title: negativeWord())
+        if isItLoveYet.hasReachedLoveLimit() {
             enableLoveButton(true)
             return
         } else {
@@ -98,12 +85,12 @@ class IsItLoveViewController: UIViewController {
     
     @IBAction func reset(_ button: UIButton) {
         
-        guard let loveButton = loveButton else {
-            return
-        }
+        //Perform domain operation
+        isItLoveYet.resetProgress()
         
-        loveButton.isEnabled = false
-        loveProgressText = String(floor)
+        // Change UI in response to domain changes
+        enableLoveButton(false)
+        loveProgressText = String(isItLoveYet.currentProgress())
     }
     
     private func updateLoveProgressLabel() {
