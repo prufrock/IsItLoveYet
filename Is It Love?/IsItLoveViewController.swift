@@ -79,7 +79,6 @@ class IsItLoveViewController: UIViewController {
     }
     
     @IBAction func loveButtonPressed(_ button: UIButton) {
-    
         loveProgressText = "❤️"
     }
     
@@ -103,11 +102,6 @@ class IsItLoveViewController: UIViewController {
     }
     
     private func enableLoveButton(_ enabled: Bool) {
-        
-        guard let loveButton = loveButton else {
-            return
-        }
-        
         loveButton.isEnabled = enabled
     }
     
