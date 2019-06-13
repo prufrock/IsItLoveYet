@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum WordType {
+    case positive, negative, none
+}
+
 class IsItLoveViewController: UIViewController {
     
     @IBOutlet var loveProgressLabel: UILabel!
@@ -43,15 +47,26 @@ class IsItLoveViewController: UIViewController {
         setTitlesFor(leftButton, title: positiveWord())
         setTitlesFor(rightButton, title: negativeWord())
     }
-    
-    @IBAction func leftButtonPressed(_ button: UIButton) {
-        
+
+    @IBAction func buttonPressed(_ button: UIButton) {
+
+        var wordType: WordType;
+
+        // Get state from UI
+        let title = buttonTitle(button)
+
         // Perform domain operation
-        isItLoveYet.incrementProgress()
-        
+        if positiveWords.firstIndex(of: title) != nil {
+            wordType = .positive
+        } else {
+            wordType = .negative
+        }
+
+        updateProgress(wordType)
+
         // Change UI in response to domain changes
         loveProgressText = String(isItLoveYet.currentProgress())
-        setTitlesFor(leftButton, title: positiveWord())
+        setTitlesFor(button, title: selectWord(wordType))
         if isItLoveYet.hasReachedLoveLimit() {
             enableLoveButton(true)
             return
@@ -61,20 +76,23 @@ class IsItLoveViewController: UIViewController {
         }
     }
     
-    @IBAction func rightButtonPressed(_ button: UIButton) {
-        
-        // Perform domain operation
-        isItLoveYet.decrementProgress()
-        
-        // Change UI in response to domain changes
-        loveProgressText = String(isItLoveYet.currentProgress())
-        setTitlesFor(leftButton, title: negativeWord())
-        if isItLoveYet.hasReachedLoveLimit() {
-            enableLoveButton(true)
-            return
-        } else {
-            enableLoveButton(false)
-            return
+    private func updateProgress(_ type: WordType) {
+        switch type {
+        case .positive,
+             .none:
+            isItLoveYet.incrementProgress()
+        case .negative:
+            isItLoveYet.decrementProgress()
+        }
+    }
+
+    private func selectWord(_ type: WordType) -> String {
+        switch type {
+            case .positive,
+                 .none:
+                return positiveWord()
+            case .negative:
+                return negativeWord()
         }
     }
     
@@ -99,6 +117,10 @@ class IsItLoveViewController: UIViewController {
         }
         
         loveProgress.text = loveProgressText
+    }
+
+    private func buttonTitle(_ button:UIButton) -> String {
+        return button.currentTitle ?? ""
     }
     
     private func enableLoveButton(_ enabled: Bool) {

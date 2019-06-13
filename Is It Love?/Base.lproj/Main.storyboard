@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,18 +15,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="IsItLoveViewController" customModule="Is_It_Love_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8S-dv-Pd0">
-                                <rect key="frame" x="227.5" y="125" width="145" height="120"/>
+                                <rect key="frame" x="134.5" y="149" width="145" height="120"/>
                                 <accessibility key="accessibilityConfiguration" identifier="love-value-label"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Dn-jD-TT3">
-                                <rect key="frame" x="213" y="568" width="174" height="106"/>
+                                <rect key="frame" x="120" y="592" width="174" height="106"/>
                                 <accessibility key="accessibilityConfiguration" identifier="love-button"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="174" id="5CV-xH-NgR"/>
@@ -40,29 +44,29 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGx-Su-RN9">
-                                <rect key="frame" x="48" y="462" width="60" height="63"/>
+                                <rect key="frame" x="48" y="486" width="60" height="63"/>
                                 <accessibility key="accessibilityConfiguration" identifier="left-button"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="42"/>
                                 <state key="normal" title="Joy">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="leftButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YhY-zS-fnd"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nlx-fK-jnp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdG-yI-dzh">
-                                <rect key="frame" x="485" y="462" width="80" height="63"/>
+                                <rect key="frame" x="299" y="486" width="80" height="63"/>
                                 <accessibility key="accessibilityConfiguration" identifier="right-button"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="42"/>
                                 <state key="normal" title="Envy">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="rightButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WWx-UT-LmL"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J4h-EW-HBB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meR-C5-Lwb">
-                                <rect key="frame" x="266.5" y="275" width="67" height="47"/>
+                                <rect key="frame" x="173.5" y="299" width="67" height="47"/>
                                 <accessibility key="accessibilityConfiguration" identifier="reset-button"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
                                 <state key="normal" title="reset">
