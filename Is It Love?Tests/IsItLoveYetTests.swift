@@ -14,7 +14,7 @@ class IsItLoveYetTests: XCTestCase {
     var domain: IsItLoveYet!
 
     override func setUp() {
-       domain = IsItLoveYet()
+        domain = IsItLoveYet()
     }
 
     func test_it_starts_at_0() {
