@@ -14,7 +14,7 @@ class IsItLoveYetTests: XCTestCase {
     var domain: IsItLoveYet!
 
     override func setUp() {
-        domain = IsItLoveYet()
+        domain = IsItLoveYet(initialPositiveWords: ["Joy", "Elation", "Cheer", "Gratitude", "Friend"], initialNegativeWords: ["Envy", "Cruel", "Despair", "Suffer", "Agony"])
     }
 
     func test_it_starts_at_0() {
@@ -59,5 +59,13 @@ class IsItLoveYetTests: XCTestCase {
         XCTAssertEqual(100.0, domain.currentProgress())
 
         XCTAssertEqual(true, domain.hasReachedLoveLimit())
+    }
+
+    func test_it_doesnt_confirm_a_positive_word() {
+        XCTAssertFalse(domain.isPositiveWord("Envy"));
+    }
+
+    func test_it_confirms_a_positive_word() {
+        XCTAssertTrue(domain.isPositiveWord("Joy"));
     }
 }

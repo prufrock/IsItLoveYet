@@ -36,13 +36,13 @@ class IsItLoveViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        isItLoveYet = IsItLoveYet()
-        
+
         enableLoveButton(false)
 
         positiveWords = ["Joy", "Elation", "Cheer", "Gratitude", "Friend"]
         negativeWords = ["Envy", "Cruel", "Despair", "Suffer", "Agony"]
+
+        isItLoveYet = IsItLoveYet(initialPositiveWords: positiveWords, initialNegativeWords: negativeWords)
 
         setTitlesFor(leftButton, title: positiveWord())
         setTitlesFor(rightButton, title: negativeWord())
@@ -56,7 +56,7 @@ class IsItLoveViewController: UIViewController {
         let title = buttonTitle(button)
 
         // Perform domain operation
-        if positiveWords.firstIndex(of: title) != nil {
+        if isItLoveYet.isPositiveWord(title) {
             wordType = .positive
         } else {
             wordType = .negative

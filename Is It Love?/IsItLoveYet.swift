@@ -10,9 +10,15 @@ import Foundation
 
 class IsItLoveYet {
     var progress: LoveProgress
-    
-    init() {
+
+    private var positiveWords = [String]()
+    private var negativeWords = [String]()
+
+    init(initialPositiveWords: [String], initialNegativeWords: [String]) {
+
         progress = LoveProgress(initialProgress: 0.0)
+        positiveWords = initialPositiveWords
+        negativeWords = initialNegativeWords
     }
     
     func incrementProgress() {
@@ -33,5 +39,9 @@ class IsItLoveYet {
     
     func hasReachedLoveLimit() -> Bool {
         return progress.hasReachedLoveLimit()
+    }
+
+    public func isPositiveWord(_ word: String) -> Bool {
+        return positiveWords.firstIndex(of: word) != nil
     }
 }
