@@ -44,4 +44,8 @@ class IsItLoveYet {
     public func isPositiveWord(_ word: String) -> Bool {
         return positiveWords.firstIndex(of: word) != nil
     }
+
+    public func updateProgress(_ word: String) {
+        progress.increment()
+    }
 }

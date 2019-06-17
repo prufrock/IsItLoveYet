@@ -68,4 +68,9 @@ class IsItLoveYetTests: XCTestCase {
     func test_it_confirms_a_positive_word() {
         XCTAssertTrue(domain.isPositiveWord("Joy"));
     }
+
+    func test_it_increases_progress_when_receiving_a_positive_word() {
+        domain.updateProgress("Joy")
+        XCTAssertEqual(10.0, domain.currentProgress())
+    }
 }
