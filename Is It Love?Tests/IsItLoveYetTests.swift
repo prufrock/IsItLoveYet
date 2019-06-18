@@ -14,7 +14,10 @@ class IsItLoveYetTests: XCTestCase {
     var domain: IsItLoveYet!
 
     override func setUp() {
-        domain = IsItLoveYet(initialPositiveWords: ["Joy", "Elation", "Cheer", "Gratitude", "Friend"], initialNegativeWords: ["Envy", "Cruel", "Despair", "Suffer", "Agony"])
+        domain = IsItLoveYet(
+                initialPositiveWords: ["Joy", "Elation", "Cheer", "Gratitude", "Friend"],
+                initialNegativeWords: ["Envy", "Cruel", "Despair", "Suffer", "Agony"]
+        )
     }
 
     func test_it_starts_at_0() {
