@@ -76,4 +76,9 @@ class IsItLoveYetTests: XCTestCase {
         domain.updateProgress("Joy")
         XCTAssertEqual(10.0, domain.currentProgress())
     }
+
+    func test_when_at_0_it_doesnt_increase_progress_when_it_recieves_a_negative_word() {
+        domain.updateProgress("Envy")
+        XCTAssertEqual(0.0, domain.currentProgress())
+    }
 }

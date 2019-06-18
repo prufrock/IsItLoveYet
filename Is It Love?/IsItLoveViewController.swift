@@ -62,7 +62,7 @@ class IsItLoveViewController: UIViewController {
             wordType = .negative
         }
 
-        updateProgress(wordType)
+        isItLoveYet.updateProgress(title)
 
         // Change UI in response to domain changes
         loveProgressText = String(isItLoveYet.currentProgress())

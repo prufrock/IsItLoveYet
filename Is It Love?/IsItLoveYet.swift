@@ -46,6 +46,10 @@ class IsItLoveYet {
     }
 
     public func updateProgress(_ word: String) {
-        progress.increment()
+        if (isPositiveWord(word)) {
+            progress.increment()
+        } else {
+            progress.decrement()
+        }
     }
 }

@@ -16,6 +16,13 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>IsItLoveYetTests.test_when_at_0_it_doesnt_increase_progress_when_it_recieves_a_negative_word.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 </dict>
 </plist>
