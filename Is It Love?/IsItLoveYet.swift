@@ -52,4 +52,8 @@ class IsItLoveYet {
             progress.decrement()
         }
     }
+
+    func selectWord(_ word: String) -> String {
+        return "Joy"
+    }
 }

@@ -15,8 +15,8 @@ class IsItLoveYetTests: XCTestCase {
 
     override func setUp() {
         domain = IsItLoveYet(
-                initialPositiveWords: ["Joy", "Elation", "Cheer", "Gratitude", "Friend"],
-                initialNegativeWords: ["Envy", "Cruel", "Despair", "Suffer", "Agony"]
+                initialPositiveWords: ["Joy"],
+                initialNegativeWords: ["Envy"]
         )
     }
 
@@ -80,5 +80,9 @@ class IsItLoveYetTests: XCTestCase {
     func test_when_at_0_it_doesnt_increase_progress_when_it_recieves_a_negative_word() {
         domain.updateProgress("Envy")
         XCTAssertEqual(0.0, domain.currentProgress())
+    }
+
+    func test_when_select_word_recieves_a_word_it_doesnt_know_it_returns_a_positive_word() {
+        XCTAssertEqual("Joy", domain.selectWord("Joy"))
     }
 }
