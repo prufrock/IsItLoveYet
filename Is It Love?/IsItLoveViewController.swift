@@ -76,16 +76,6 @@ class IsItLoveViewController: UIViewController {
         }
     }
     
-    private func updateProgress(_ type: WordType) {
-        switch type {
-        case .positive,
-             .none:
-            isItLoveYet.incrementProgress()
-        case .negative:
-            isItLoveYet.decrementProgress()
-        }
-    }
-
     private func selectWord(_ type: WordType) -> String {
         switch type {
             case .positive,
