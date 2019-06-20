@@ -41,11 +41,11 @@ class IsItLoveYet {
         return progress.hasReachedLoveLimit()
     }
 
-    public func isPositiveWord(_ word: String) -> Bool {
+    func isPositiveWord(_ word: String) -> Bool {
         return positiveWords.firstIndex(of: word) != nil
     }
 
-    public func updateProgress(_ word: String) {
+    func updateProgress(_ word: String) {
         if (isPositiveWord(word)) {
             progress.increment()
         } else {
