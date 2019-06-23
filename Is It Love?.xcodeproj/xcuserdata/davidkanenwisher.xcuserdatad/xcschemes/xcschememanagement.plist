@@ -23,6 +23,13 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>IsItLoveYetTests.test_when_select_word_recieves_a_word_it_doesnt_know_it_returns_a_positive_word.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 </dict>
 </plist>

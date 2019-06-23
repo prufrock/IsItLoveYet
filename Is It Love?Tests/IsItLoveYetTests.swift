@@ -83,6 +83,6 @@ class IsItLoveYetTests: XCTestCase {
     }
 
     func test_when_select_word_recieves_a_word_it_doesnt_know_it_returns_a_positive_word() {
-        XCTAssertEqual("Joy", domain.selectWord("Joy"))
+        XCTAssertEqual("Joy", domain.selectWord("Jubilant"))
     }
 }
