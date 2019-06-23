@@ -45,6 +45,10 @@ class IsItLoveYet {
         return positiveWords.firstIndex(of: word) != nil
     }
 
+    func isNegativeWord(_ word: String) -> Bool {
+        return negativeWords.firstIndex(of: word) != nil
+    }
+
     func updateProgress(_ word: String) {
         if (isPositiveWord(word)) {
             progress.increment()
@@ -54,6 +58,28 @@ class IsItLoveYet {
     }
 
     func selectWord(_ word: String) -> String {
-        return "Joy"
+        return isNegativeWord(word) ? randomWord(.negative) : randomWord(.positive)
+    }
+
+    func randomWord(_ type: WordType) -> String {
+        switch type {
+        case .positive,
+             .none:
+            return positiveWord()
+        case .negative:
+            return negativeWord()
+        }
+    }
+
+    private func positiveWord() -> String {
+        return positiveWords[random(positiveWords.count)]
+    }
+
+    private func negativeWord() -> String {
+        return negativeWords[random(negativeWords.count)]
+    }
+
+    private func random(_ max: Int) -> Int {
+        return Int(arc4random_uniform(UInt32(max)))
     }
 }

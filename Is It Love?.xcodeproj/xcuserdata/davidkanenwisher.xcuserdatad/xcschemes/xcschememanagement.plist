@@ -30,6 +30,13 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>IsItLoveYetTests.test_when_select_word_receives_a_negative_word_it_returns_a_negative_word.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 </dict>
 </plist>

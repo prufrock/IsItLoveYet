@@ -44,45 +44,28 @@ class IsItLoveViewController: UIViewController {
 
         isItLoveYet = IsItLoveYet(initialPositiveWords: positiveWords, initialNegativeWords: negativeWords)
 
-        setTitlesFor(leftButton, title: positiveWord())
-        setTitlesFor(rightButton, title: negativeWord())
+        setTitlesFor(leftButton, title: isItLoveYet.randomWord(.positive))
+        setTitlesFor(rightButton, title: isItLoveYet.randomWord(.negative))
     }
 
     @IBAction func buttonPressed(_ button: UIButton) {
-
-        var wordType: WordType;
 
         // Get state from UI
         let title = buttonTitle(button)
 
         // Perform domain operation
-        if isItLoveYet.isPositiveWord(title) {
-            wordType = .positive
-        } else {
-            wordType = .negative
-        }
-
         isItLoveYet.updateProgress(title)
+        let newWord = isItLoveYet.selectWord(title)
+        loveProgressText = String(isItLoveYet.currentProgress())
 
         // Change UI in response to domain changes
-        loveProgressText = String(isItLoveYet.currentProgress())
-        setTitlesFor(button, title: selectWord(wordType))
+        setTitlesFor(button, title: newWord)
         if isItLoveYet.hasReachedLoveLimit() {
             enableLoveButton(true)
             return
         } else {
             enableLoveButton(false)
             return
-        }
-    }
-    
-    private func selectWord(_ type: WordType) -> String {
-        switch type {
-            case .positive,
-                 .none:
-                return positiveWord()
-            case .negative:
-                return negativeWord()
         }
     }
     
@@ -116,19 +99,7 @@ class IsItLoveViewController: UIViewController {
     private func enableLoveButton(_ enabled: Bool) {
         loveButton.isEnabled = enabled
     }
-    
-    private func positiveWord() -> String {
-        
-        let idx = arc4random_uniform(UInt32(positiveWords.count))
-        return positiveWords[Int(idx)]
-    }
-    
-    private func negativeWord() -> String {
-        
-        let idx = arc4random_uniform(UInt32(negativeWords.count))
-        return negativeWords[Int(idx)]
-    }
-    
+
     private func setTitlesFor(_ button: UIButton, title: String) {
         
         button.setTitle(title, for: UIControl.State.normal)

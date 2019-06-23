@@ -82,7 +82,15 @@ class IsItLoveYetTests: XCTestCase {
         XCTAssertEqual(0.0, domain.currentProgress())
     }
 
-    func test_when_select_word_recieves_a_word_it_doesnt_know_it_returns_a_positive_word() {
+    func test_when_select_word_receives_a_word_it_doesnt_know_it_returns_a_positive_word() {
         XCTAssertEqual("Joy", domain.selectWord("Jubilant"))
+    }
+
+    func test_when_select_word_receives_a_positive_word_it_returns_a_positive_word() {
+        XCTAssertEqual("Joy", domain.selectWord("Joy"))
+    }
+
+    func test_when_select_word_receives_a_negative_word_it_returns_a_negative_word() {
+        XCTAssertEqual("Envy", domain.selectWord("Envy"))
     }
 }
