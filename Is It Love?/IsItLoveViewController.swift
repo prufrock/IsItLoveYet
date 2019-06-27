@@ -55,11 +55,10 @@ class IsItLoveViewController: UIViewController {
 
         // Perform domain operation
         isItLoveYet.updateProgress(title)
-        let newWord = isItLoveYet.selectWord(title)
-        loveProgressText = String(isItLoveYet.currentProgress())
 
         // Change UI in response to domain changes
-        setTitlesFor(button, title: newWord)
+        setTitlesFor(button, title: isItLoveYet.selectWord(title))
+        loveProgressText = String(isItLoveYet.currentProgress())
         if isItLoveYet.hasReachedLoveLimit() {
             enableLoveButton(true)
             return
