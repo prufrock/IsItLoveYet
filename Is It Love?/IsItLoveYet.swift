@@ -19,11 +19,11 @@ class IsItLoveYet {
     private var negativeWords = [String]()
     private var wordSelectionStrategy: WordSelectionStrategy
 
-    init(initialPositiveWords: [String], initialNegativeWords: [String], wordSelectionStrategy: WordSelectionStrategy = .matching) {
+    init(positiveWords: [String], negativeWords: [String], wordSelectionStrategy: WordSelectionStrategy = .matching) {
 
         progress = LoveProgress(initialProgress: 0.0)
-        positiveWords = initialPositiveWords
-        negativeWords = initialNegativeWords
+        self.positiveWords = positiveWords
+        self.negativeWords = negativeWords
         self.wordSelectionStrategy = wordSelectionStrategy
     }
     

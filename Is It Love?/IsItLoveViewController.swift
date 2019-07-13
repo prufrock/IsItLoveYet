@@ -42,7 +42,7 @@ class IsItLoveViewController: UIViewController {
         positiveWords = ["Joy", "Elation", "Cheer", "Gratitude", "Friend"]
         negativeWords = ["Envy", "Cruel", "Despair", "Suffer", "Agony"]
 
-        isItLoveYet = IsItLoveYet(initialPositiveWords: positiveWords, initialNegativeWords: negativeWords, wordSelectionStrategy: Config.wordSelectionStrategy)
+        isItLoveYet = IsItLoveYet(positiveWords: positiveWords, negativeWords: negativeWords, wordSelectionStrategy: Config.wordSelectionStrategy)
 
         setTitlesFor(leftButton, title: isItLoveYet.randomWord(.positive))
         setTitlesFor(rightButton, title: isItLoveYet.randomWord(.negative))
