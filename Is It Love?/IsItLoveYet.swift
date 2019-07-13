@@ -8,17 +8,23 @@
 
 import Foundation
 
+enum WordSelectionStrategy {
+    case matching, random
+}
+
 class IsItLoveYet {
     var progress: LoveProgress
 
     private var positiveWords = [String]()
     private var negativeWords = [String]()
+    private var wordSelectionStrategy: WordSelectionStrategy
 
-    init(initialPositiveWords: [String], initialNegativeWords: [String]) {
+    init(initialPositiveWords: [String], initialNegativeWords: [String], wordSelectionStrategy: WordSelectionStrategy = .matching) {
 
         progress = LoveProgress(initialProgress: 0.0)
         positiveWords = initialPositiveWords
         negativeWords = initialNegativeWords
+        self.wordSelectionStrategy = wordSelectionStrategy
     }
     
     func incrementProgress() {
@@ -58,16 +64,30 @@ class IsItLoveYet {
     }
 
     func selectWord(_ word: String) -> String {
+        switch wordSelectionStrategy {
+        case .matching:
+            return selectMatchingWordType(word)
+        case .random:
+            return selectRandomWordType(word)
+        }
+    }
+
+    func selectMatchingWordType(_ word: String) -> String {
         return isNegativeWord(word) ? randomWord(.negative) : randomWord(.positive)
+    }
+
+    func selectRandomWordType(_ word: String) -> String {
+        return randomWord(.none)
     }
 
     func randomWord(_ type: WordType) -> String {
         switch type {
-        case .positive,
-             .none:
+        case .positive:
             return positiveWord()
         case .negative:
             return negativeWord()
+        case .none:
+            return (random(2) > 0 ? positiveWord() : negativeWord())
         }
     }
 
