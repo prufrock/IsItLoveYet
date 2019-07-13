@@ -71,15 +71,7 @@ class IsItLoveYet {
             return selectRandomWordType(word)
         }
     }
-
-    func selectMatchingWordType(_ word: String) -> String {
-        return isNegativeWord(word) ? randomWord(.negative) : randomWord(.positive)
-    }
-
-    func selectRandomWordType(_ word: String) -> String {
-        return randomWord(.none)
-    }
-
+    
     func randomWord(_ type: WordType) -> String {
         switch type {
         case .positive:
@@ -89,6 +81,14 @@ class IsItLoveYet {
         case .none:
             return (random(2) > 0 ? positiveWord() : negativeWord())
         }
+    }
+
+    private func selectMatchingWordType(_ word: String) -> String {
+        return isNegativeWord(word) ? randomWord(.negative) : randomWord(.positive)
+    }
+
+    private func selectRandomWordType(_ word: String) -> String {
+        return randomWord(.none)
     }
 
     private func positiveWord() -> String {
